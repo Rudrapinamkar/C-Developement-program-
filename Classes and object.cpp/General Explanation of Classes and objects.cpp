@@ -2,12 +2,12 @@
 #include<string>
 using namespace std;
 //This is a program in which we are going to store the details of a student
-class sutdent{
+class sutdent{//A class is a blueprint for the information
     public:
-        string name;
+        string name;//For a student we are writng all the necesary information here like name , email,phone etc so that when we create a obejct then we would nt need to write this all agian for a differnet person
         string email;
         long int phone_num;
-    void Fill_data(){
+    void Fill_data(){//this are a member function they perform operation which cna be called in the int main 
         cout<<"Enter your name: ";
         cin>>name;
         cout<<"enter your email: ";
@@ -40,8 +40,8 @@ class sutdent{
 };
 
 int main(){
-    sutdent s1;
-    int input;
+    sutdent s1;//this is important ; this is a object which is a instance of the class ; that means we are copingg the class all over again for s1
+    int input;//think about it like instantiating a bullet froma original bullet like we  do in game developement
     while(true){
     cout<<"Enter your input (1-Fill data, 2-Edit details, 3-Exit): ";
     cin>>input;    
