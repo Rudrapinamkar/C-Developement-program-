@@ -1,0 +1,63 @@
+#include<iostream>
+using namespace std;
+int main(){
+    int taregt =7;
+    int n;
+    int i=0;j=0;
+    int val=0;
+
+    int size=0;
+    int capacity=5;
+
+    int *arr=new int[capacity];
+    while(true){
+        
+        if(size==capacity){
+            capacity*=2;
+            int *newarr=new int[capacity];
+            for(int k=0;k<size;k++){
+                newarr[k]=arr[k];
+            }
+            delete[] arr;
+            arr = newarr;
+        }
+        cout<<"Enter the value (-1 to stop)";
+        cin>>val;
+        if(val==-1) break;
+        
+        arr[size]=val;
+        size++;
+    }
+   
+    
+    
+    for(int i=0;i<size-1;i++){
+        for(int j=0;j<size-1-i;j++){
+            if(arr[j]>arr[j+1]){
+                int temp = arr[j];
+                arr[j]=arr[j+1];
+                arr[j+1]=temp;
+            }
+        }
+    }
+    
+    int left=0;
+    int right=n-1;
+    int current_sum=0;
+    while( left<right){
+        current_sum  = arr[left] + arr[right];
+        if(current_sum==taregt){
+            cout<<"The target is the sum of "<<arr[left]<<" and "<<arr[right];
+            break;
+        }
+        else if(current_sum<taregt){
+            left++;
+        }
+        else{
+            right--;
+        }
+    
+        
+    }
+    
+}
