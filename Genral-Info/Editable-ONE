@@ -1,1 +1,49 @@
+For the coe  
+for(int i=0,j=0;i,10;++1,++j){  --> this is valid- 
+
+}
+
+#2 Referances Varaibles;
+A refernce variable like pointer{But it is not a pointer) which provides the adress is like an "alias" to another variable 
+>So the differnec between a pointer and a refernce is that the referance is "hidden pointer" because unlike pointe varibale it does not have its own address
+>In many case they replace function calls that are "Pass by address" with calls that are "Pass by referance"
+<> creating a refernace variable 
+  >int &  // type to int                       //How to read what 
+  >char& // type to char                       //int& variable_name; ---> this is like saying that the variable_name becomes another name to vbaribale that sotres a value 
+  >float&;  //type refernace to flaot           //int* varaibel_name;  ----> this is llike sayi8ng that variable_name stores a pointer to an interge
+  >int*&; //Type refeance to pointer to int      
+
+  > You might be having doubt about what this is exactly so the thing is 
+  > As you know that in int x=10; int this the int tells us that the varabel x stores the dast value having the typee of integer
+                                  IMP> so in this int& tellls us that the variable next to it will be sotring a value of referenace to an integer
+  
+
+  >int& ref; shouldd always be equal tto somehitng other wise its like saying that the ref is a another name for ..... but for what 
+  > so we ne2ed to write it like this int& ref = x; where x soteres some value in it
+
+  > the refenace is not like a pointer it is not spareate entiy it doesnt have its own adress , Like for ex  if you ttied to print the adress of ref varibale all you would get is the adress of the variable the reef was pointing to 
+
+<IMP> call by value and call by refrnace
+<Call by value 
+#inccludde<iostream>   // we are returrn the valyue to the function by passing the value 
+void function(intnumber)[   // th effunction fucntion takes the inputt thourhg the pparameter in tnumber 
+  cout<<number;
+}
+
+int main(){
+int num=0;
+function(num);  // here we pass the value to the fucntion 
+}
+
+<Call by referance>
+#inlcude<iostream>
+
+void fucntion(int &number){  // in this the refernace is passed like when thge inout of num is passed from the mian fucntion &number becomes an alisa to the nyum variabel 
+ccout<<number;
+}
+int main(){
+int num=0;
+function(num);  // when the value is passed to the function thhe number variable now shares the name of the num variibale unlike pointer it would not store any thing 
+}
+
 
