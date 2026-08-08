@@ -47,3 +47,25 @@ function(num);  // when the value is passed to the function thhe number variable
 }
 
 
+
+<PASSING PRIMITIVE TYPES --- Funtion modification>
+#include<iostream>
+using namespace std;
+                    
+void function(int *ptr){   // so in the fucciton paraneters i wrote int*ptr whicch means the ptr variable is going to take orr going to store the value "adress
+                    // *ptr essentially became equall as *ptr=&num;
+    *ptr=*ptr+1;    // We are derefering the ptr variaable AS we knwo thatt the ptr is stroring the adress then by writng * in forrnt of the variablee we will get the value stored in it
+}
+
+int main(){       //Inn a for loop we looping the funciton calling the numberr of times the user wannt us do
+    int num=19;
+    int temp;
+    cout<<"Enter the number of addtion you wanna do with 19 ";
+    cin>>temp;
+    for(int i=0;i<temp;i++){      
+        function(&num);        // we are caalling thhe fnction by passinghte value of adress off the num variable 
+        
+    }
+    cout<<num;    
+    
+}
