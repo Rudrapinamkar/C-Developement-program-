@@ -28,7 +28,38 @@ int main(){
     cout<<"Your numbers have been swaped by Pointers method "<<"b="<<b<<" a="<<a<<endl;
     swap2(a,b);
     cout<<"Your numbers have been swaped by referance method "<<"b="<<b<<" a="<<a<<endl;
-    
-
-    
 }
+
+
+-------------------------------------------------------------#QUESTION 2;------------------------------------------------------------------------------------------
+
+//In this question we reversed the string takn as a input from the user , Here is hwoi did it
+// First i initilized the pointer with the string which we are giving it as a input
+//like in a Two pointer method the two pointer atrts at the first positon and the last positon and with the for loop then come to the center of the string
+//Whne the each poiner is pointed to the their respectiveposition we swap them with general method of swapping 
+
+
+#include<iostream>
+using namespace std;
+
+int main(){
+                    
+    string str;    
+    string*ptr=&str;
+    cout<<"Enter the string to reverse it ";
+    cin>>str;
+    
+    char temp;
+    for(int i=0;i<(str.size())/2;i++){          //here we are looping from the oth position fo the string to the middle of the string
+        char &left = (*ptr)[i];                         // we made a char pointer which will start from the oth position and is equal to first character of the string
+        // we actuallu need to write the (*ptr)[i] becuase *ptr is the string so to make it saperate we need to write this
+        char &right = (*ptr)[str.size() - 1 - i];           //The right pointer starts from the last position           
+        temp=left;
+        left=right;                 //This is our normal method of swapping
+        right=temp;
+        
+    }
+    
+    cout<<"The str is revered "<<str;
+}
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
