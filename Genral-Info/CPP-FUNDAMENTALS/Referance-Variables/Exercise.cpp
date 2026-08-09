@@ -63,3 +63,51 @@ int main(){
     cout<<"The str is revered "<<str;
 }
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//So in this program what we do is that we take the input from the user adn store it into a array ,
+//and in the main fucntion we call a find fucntion ,wehre outside of th emain fucntion we wrote a find funciotn which takes the input
+//as  array lenght and max min value which are declared in the main fucntion , 
+//the find function then cheacks with the for loop comapring each valeu from the another
+
+#include<iostream>
+#include<vector>
+using namespace std;
+
+void find(vector<int>& array, int length, int& m, int& n)  //We took the m,n,and the vecotr as adress is because we are going to change the value of max and min vlaue
+{                                                           //we needed to took the adress of the vecotr because unlike array vectr cannot be just passed , we to use adress    
+    int temp=array[0];                      // the comparing logic is that we start the with two variables assinging them with the first elemnet in the vecotr then by the for loop we are traversing comapring the first value of the vecotr with the next element if the value is greter then we swap it with the variablee initially storing the  value of the first varibal of vectro
+    int min=array[0];
+    for(int i=0;i<length;i++){
+        if(temp<=array[i]){
+            temp=array[i];
+        }
+        if(min>array[i]){
+            min=array[i];
+        }
+    }
+    m=temp;
+    n=min;
+    
+}
+
+int main(){
+    vector<int> array;
+    cout<<"Input the array from which you want to find the maximum and minimum ";
+    
+    int temp=0;
+    while (true){
+        cin>>temp;
+        
+        if(temp==0){
+            break;
+        }
+        array.push_back(temp);
+    }
+    const int length = array.size();
+
+
+    int max,min;
+    find(array,length,max, min);  // here we are passing the values and variables 
+    cout<<"max"<<max<<" min "<<min;
+    
+    return 0;
+}
