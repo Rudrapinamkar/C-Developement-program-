@@ -35,3 +35,32 @@ int main(){
         cout<<"The Name: "<<emp.name;
     }
 ____________________________________________________________________________________________________________________________________________________________________________________________________________--
+//In this cod we have tried to show that how default arguments are used wen no arguments are passed thorught the main function
+
+
+#include <iostream>
+using namespace std;
+const int size=122;//We need to decalre a const her eis because we are going to declare a szie of a the array buffer using this size variable 
+//and since a array cannot change its size we need to put some const value in there
+
+void clear_buffer(char*ptr, char ch=' ',int length=size){   //The value declared there are the defalut values which will be considered of no arguments are passed
+    for(int i=0;i<length;i++){ 
+        *ptr++=ch;    // I was confused here , *ptr adress to the char array of buffer we are bascally adding ch into our arra per loop 
+    }
+    *ptr='\0';  // we need to write to decalre the  end of the string else while printing the array we will get garbage values because after the string is over printing whatever remains in the array is garbage 
+    
+}
+
+int main(){
+    char buffer[size+1];   // we deinfe our charcter array
+    
+    clear_buffer(buffer);   // just array
+    cout<<"Buffer_one:"<<buffer<<endl;
+    
+    clear_buffer(buffer,'?');// both array and on echarctaer 
+    cout<<"Buffer_two:"<<buffer<<endl;
+    
+    clear_buffer(buffer,'*',12);
+    cout<<"Buffer_three:"<<buffer<<endl;
+}
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
