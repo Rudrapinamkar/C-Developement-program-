@@ -20,3 +20,22 @@ int main(){
         }
     }
 }
+
+
+// in the below the count gives 0 and 1 i.e the true and false value for existance
+if (mp.count("apple")) {
+    cout << "exists" << endl;
+}
+
+// ImP this is how we make a frquency counter with O(n) time complexity
+unordererd_map<int ,int> mp;
+for(int i : num){
+    mp[i]++; // waht it does it increaset the frequency count of the value for the given key
+}
+
+
+// When we need to iterate thorugh the map and print all the key vlaue pari 
+for ( initialization ; condition ; increment );
+
+
+
