@@ -70,3 +70,32 @@ int main(){
     return 0;
 }
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                #This code is of multidimensional array alllocation dynamically - it is  a complex topic so i will eit it later
+    #include<iostream>
+//in this code we are going dynamically allocate meomary for a two dimensional array so..
+using namespace std;
+
+const int col =3;
+void read(int(*ptr)[col] , int rows ){
+    for(int i=0;i<rows;i++){
+        for(int j=0;j<col;j++){
+            cout<<"Value for column: "<<j<<" and row: "<<i;
+            cin>>ptr[i][j];   // ther reason we are not derefernceing it is becasue usinf[] this already makes ptr mdereferenced 
+        }
+    }
+    
+}
+
+void print(){
+    
+}
+
+int main(){
+    
+    int rows;
+    cout<<" Enter the number of rows you would want to have for 3 columns ";
+    cin>>rows;
+    int(*ptr)[col]= new int[rows][col];
+    read(ptr,rows);
+}
+_-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
