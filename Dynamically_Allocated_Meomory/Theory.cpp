@@ -37,3 +37,36 @@ int main(){
         delete array[i];
     }
 }
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#Showing how to dynamically allocate the meomery in heap
+#include<iostream>
+using namespace std;
+
+int main(){
+    int capacity;
+    cout<<"Enter the capacity for the dynamically allocated meomery in the heap: " ;
+    cin>>capacity;
+    int res;
+    int size;
+    
+    // To use the ddynaically allocated meomary C++ uses the"new" keyword
+    int *ptr = new int[capacity]; // this means that i have allocated a array of cahr in the heap with the capacity given
+    cout<<"\n The for loop will run until the capacity of the array has been filled: ";
+    for(int i =0;i<capacity;i++){
+        cin>>res;
+     
+        *(ptr+i)=res;
+    }
+    
+    for(int i=0;i<capacity;i++){
+        cout<<" "<<ptr[i];
+        
+    }
+    
+    
+    delete[] ptr;  // We need to delete the meomary we allocated in the heap to increase the efficiency
+    ptr=nullptr;  // instead of letting pointer point some garbage value we point it towards a null value
+    
+    return 0;
+}
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
